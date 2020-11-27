@@ -11,7 +11,21 @@
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/js/uikit-icons.min.js"></script>
         <title>AgroCafeNic</title>
     </head>
-    <body>
+<body>
+<div class="relative flex items-top justify-right min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-right sm:pt-0">
+            @if (Route::has('login'))
+                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                    @auth
+                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
+                    @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
     <nav class="uk-navbar-container" uk-navbar>
 
 <div class="uk-navbar-left">
@@ -51,17 +65,17 @@
     </ul>
 </div>
 </nav>
-
         <!-- Aqui el modal del primer sitio -->
         <div class="uk-padding uk-background-muted uk-width-1-2@s">
         <h2>Beneficio Humedo</h2>
-        <img class="uk-align-left uk-margin-remove-adjacent" src="img/1.jpeg" width="225" height="150" alt="Cascada Blanca">
+        <img class="uk-align-left uk-margin-remove-adjacent" src="img/1.jpeg" width="225" height="150" alt="Cafe en grano">
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis sit impedit
              deleniti, illum officia consectetur nihil cumque cupiditate eos quaerat
               illo nesciunt laboriosam eveniet reprehenderit, omnis laborum necessitatibus
                quisquam. Optio?</p>
     <a class="uk-button uk-button-primary" href="#modal-full" uk-toggle>Leer mas</a>
-    </div>
 
+    </div>
 </body>
+
 </html>
