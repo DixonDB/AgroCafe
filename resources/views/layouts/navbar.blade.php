@@ -40,6 +40,7 @@
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
+                    Sesion Iniciada
                         <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
                     @else
                     <button class="uk-button uk-button-default"><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Iniciar Sesion</a></button>
